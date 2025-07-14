@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EE445L LAB 4E: Web Controller</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        #leftFrame {
+            width: 340px;
+            float: left;
+            height: 100%;
+            
+        }
+        #rightFrame {
+            margin-left: 340px; /* width of the left frame */
+            height: 100%;
+        }
+        #topFrame {
+            height: 170px;
+        }
+        #bottomFrame {
+            height: calc(100% - 170px);
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="leftFrame">
+        <iframe name="mqtt_status" src="mqtt_monitor.htm"></iframe>
+    </div>
+    
+<div id="rightFrame">
+    <div id="topFrame">
+        <iframe name="clocks" src="internet_time.htm"></iframe>
+    </div>
+    <div id="bottomFrame">
+        <iframe name="control" src="mqtt_app.htm"></iframe>
+    </div>
+</div>

@@ -1,0 +1,1 @@
+double click on index.html to start web app.

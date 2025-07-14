@@ -1,0 +1,9 @@
+[submodule "sw/inc"]
+	path = sw/inc
+	url = git@github.com:ECE445L/ECE445L-Software-Libraries.git
+[submodule "hw"]
+	path = hw
+	url = git@github.com:ECE445L/ECE445L-Hardware-Libraries.git
+[submodule "resources"]
+	path = resources
+	url = git@github.com:ECE445L/ECE445L-Resources.git

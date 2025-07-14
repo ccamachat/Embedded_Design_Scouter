@@ -1,0 +1,167 @@
+<!-- -------------------------------------------- -->
+<!-- --------- LAB 4E Web Application ----------- -->
+<!-- 
+    Mashed up by: Mark McDermott   from various sources
+    Project:      EE445L Lab 4E
+    Date:         6/6/23
+-->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>MQTT Control</title>
+	<!-- 
+			the .button used to include   			padding: 15px 32px;
+		 -->
+	<style>
+		.button {
+			border: none;
+			color: white;
+
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 14px;
+			margin: 4px 2px;
+			cursor: pointer;
+		}
+
+		.button_am_pm {
+			background-color: #4CAF50;
+		}
+
+		/* Green */
+		.button_OK {
+			background-color: #4CAF50;
+		}
+		.button_Snooze {
+			background-color: #4CAF50;
+		}	
+		/* Green */
+		.button_mode {
+			background-color: #008CBA;
+		}
+
+		/* Blue */
+		.set_clock {
+			background-color: #ac6a0e;
+		}
+
+		/* Orange */
+		.set_alarm {
+			background-color: #ac6a0e;
+		}
+
+		/* Orange */
+		.set_timer {
+			background-color: #ac6a0e;
+		}
+		/* Orange */
+		.button_Theme {
+			background-color: #ac6a0e;
+		}
+
+		/* Orange */
+		.button_hour {
+			background-color: #545faa;
+		}
+
+		/* ?? */
+		.button_min {
+			background-color: #2a5121;
+		}
+
+		/* ?? */
+		.button_sec {
+			background-color: #4c827b;
+		}
+
+		/* ?? */
+		.button_hour_P {
+			background-color: #545faa;
+		}
+
+		/* ?? */
+		.button_min_P {
+			background-color: #2a5121;
+		}
+
+		/* ?? */
+		.button_sec_P {
+			background-color: #4c827b;
+		}
+
+		/* ?? */
+
+		hr {
+			border: none;
+			height: 5px;
+			/* Set the hr color */
+			background-color: #a2ecee;
+		}
+	</style>
+
+	<link rel="stylesheet" href="lib/styles.css">
+</head>
+
+<body>
+
+
+
+	<h3 style="font-family:verdana;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Board Time </h3>
+
+	<!-- EMQX MQTT Client-->
+	<script src="lib/mqtt.min.js"></script>
+
+
+	<!-- Our Code Goes Here -->
+	<div id="board-clock"> </div>
+	<script src="clock_page.js"></script>
+	<br> <br>
+
+	<p>
+		<!-- Add more buttons for the first row here-->
+
+		<button class="button button_mode" onclick="toggleMode();" style="width: 130px; height: 40px">12/24</button>
+		<button class="button button_OK" onclick="OkButton();" style="width: 130px; height: 40px">OK</button>
+		<button class="button button_Snooze" onclick="SnoozeButton();" style="width: 130px; height: 40px">Snooze</button>
+
+	</p>
+
+	<p>
+		<button class="button set_clock" onclick="set_clock();" style="width: 130px; height: 40px">SET CLOCK</button>
+		<button class="button set_alarm" onclick="set_alarm();" style="width: 130px; height: 40px">SET ALARM</button>
+		<button class="button set_timer" onclick="set_timer();" style="width: 130px; height: 40px">SET TIMER</button>
+		<button class="button button_Theme" onclick="ThemeButton();" style="width: 130px; height: 40px">Theme</button>
+	</p>
+
+	<p>
+		<!-- Add more buttons for the second row here-->
+
+		<button class="button button_hour" onclick="dec_hour();" style="width: 130px; height: 40px">HOUR --</button>
+		<button class="button button_min" onclick="dec_min();" style="width: 130px; height: 40px">MIN --</button>
+		<button class="button button_sec" onclick="dec_sec();" style="width: 130px; height: 40px">SEC --</button>
+
+	</p>
+	<p>
+		<!-- Add more buttons for the second row here-->
+		<button class="button button_hour_P" onclick="add_hour();" style="width: 130px; height: 40px">HOUR ++</button>
+		<button class="button button_min_P" onclick="add_min();" style="width: 130px; height: 40px">MIN ++</button>
+		<button class="button button_sec_P" onclick="add_sec();" style="width: 130px; height: 40px">SEC ++</button>
+
+	</p>
+
+
+	<!-- Start it up! -->
+
+	<script>connect();</script>
+
+
+
+
+</body>
+
+</html>

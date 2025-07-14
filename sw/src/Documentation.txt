@@ -1,0 +1,27 @@
+Interrupts :
+Accelerometer - Priority 7; PB6 + PC5 
+Button - Priority 7; PC4
+Magnetometer - Priority 7; PB7
+Button - Priority 5; PE2 + PF4
+
+Edge Triggered Interrupts:
+Port B - Pri 7
+Port C - Pri 7
+Port E - Pri 5
+Port F - Pri 5
+
+Timers :
+Timer0A - Button Debouncing
+
+
+GPIO Pins With Special Considerations:
+GPIO_PORTX_PCTL = XXX
+PA1, PA0 - Default : UART0
+PA5, PA4, PA3, PA2 - Default : SSIO
+PB3, PB2 - Default - I2C0
+PC3, PC2, PC1, PC0 - JTAG/SWD
+PD7 - Locked GPIO 
+PF0 - Locked GPIO 
+
+*Locked GPIO = (Needs to be unlocked; check valvano code for example)
+	GPIO_PORTF_LOCK_R = 0x4C4F434B;   // 2) unlock GPIO Port F
